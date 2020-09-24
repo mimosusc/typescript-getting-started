@@ -45,5 +45,23 @@
   <div class="element--02">要素02</div>
   <div class="element--03">要素03</div>
   <script src="./index.js"></script>
+  <script>
+    const elm01 = document.querySelector('.element--01')
+    const elm02 = document.querySelector('.element--02')
+    const elm03 = document.querySelector('.element--03')
+
+    elm01.style.color = 'red'
+    elm02.addEventListener('mouseover', (event) => {
+      event.target.textContent = 'ホバー中'
+      elm02.addEventListener('mouseleave', (event) => {
+        event.target.textContent = '要素02'
+      })
+    })
+    elm03.addEventListener('click', (event) => {
+      event.target.textContent = sumCalculator(1, 2)
+    })
+
+    const sumCalculator = (num1, num2) => num1 + num2
+  </script>
 </body>
 </html>
